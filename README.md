@@ -63,7 +63,7 @@ Output
 ## Security
 
   ```sh
-  bundle exec brakeman
+  bundle exec brakeman --force
   ```
 
 
