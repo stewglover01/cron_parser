@@ -24,14 +24,14 @@ class CronParser
     @validator.validate(hour_field, 0, 23)
     @validator.validate(day_of_month_field, 1, 31)
     @validator.validate(month_field, 1, 12)
-    @validator.validate(day_of_week_field, 0, 7)
+    @validator.validate(day_of_week_field, 1, 7)
 
     {
       'minute' => @field_expander.expand(minute_field, 0, 59),
       'hour' => @field_expander.expand(hour_field, 0, 23),
       'day of month' => @field_expander.expand(day_of_month_field, 1, 31),
       'month' => @field_expander.expand(month_field, 1, 12),
-      'day of week' => @field_expander.expand(day_of_week_field, 0, 7),
+      'day of week' => @field_expander.expand(day_of_week_field, 1, 7),
       'command' => command
     }
   end
