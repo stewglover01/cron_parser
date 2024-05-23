@@ -6,12 +6,9 @@ class FieldExpander
     return (min_val..max_val).step(field[2..].to_i).to_a if field.start_with?('*/')
     return list_range(field) if field.include?('-') && field.include?(',')
     return range(field) if field.include?('-')
+    return date_list(field) if field.include?(',')
 
-    if field.include?(',')
-      field.split(',').map(&:to_i)
-    else
-      [field.to_i]
-    end
+    [field.to_i]
   end
 
   private
@@ -33,5 +30,9 @@ class FieldExpander
   def range(field)
     start_val, end_val = field.split('-').map(&:to_i)
     (start_val..end_val).to_a
+  end
+
+  def date_list(field)
+    field.split(',').map(&:to_i)
   end
 end

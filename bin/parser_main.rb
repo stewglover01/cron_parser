@@ -5,7 +5,7 @@ require_relative '../lib/cron_parser'
 
 def main
   if ARGV.length != 1
-    puts "Usage: cron_parser '<cron_string>'"
+    puts "Usage: bin/parser_main '<cron_string>'"
     exit 1
   end
 
