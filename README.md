@@ -35,7 +35,7 @@ It supports the standard cron format with five time fields (minute, hour, day of
 ## Usage
 
   ```sh
-  ruby bin/parser_main "*/15 0 1,15 * 1-5 /usr/bin/find"
+  ruby bin/parser_main.rb "*/15 0 1,15 * 1-5 /usr/bin/find"
   ```
 Output
 
